@@ -17,10 +17,12 @@ function wordCount(input) {
 function uniqueCount(input) {
   var wordList = [];
   var wordCount = input.split(" ").length;
-  for ( var i = 0; i <= wordCount; i++) {
-    console.log( i );
+  for ( var i = 0; i < wordCount; i++) {
+    if (wordList.indexOf(input[i]) === -1) {
+      wordList.push(input[i]);
+    }
   }
-  console.log(wordList)
+  $('.js-unique-word-length').text(wordList.length);
 }
 
 //GET AVERAGE WORD LENGTH OF INPUT and RETURN INPUT LENGTH
