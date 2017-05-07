@@ -18,24 +18,24 @@
                     <textarea cols="60" rows="20" id="user-text" name="user-text" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." required></textarea>
                 </div>
                 <div>
-                    <button type="submit">Analyze it!</button>
+                    <button class="js-submit" type="submit">Analyze it!</button>
                 </div>
             </form>
 
-            <dl class="hidden text-report">
+            <dl class="hidden text-report js-show">
                 <dt>Word count</dt>
-                <dd></dd>
+                <dd class="js-word-count"></dd>
 
                 <dt>Unique word count</dt>
-                <dd></dd>
+                <dd class="js-unique-word-length"></dd>
 
                 <dt>Average word length</dt>
-                <dd></dd>
+                <dd class="js-average-word-length"></dd>
             </dl>
         </main>
     </div>
 
-    <!-- link to jquery -->
-    <!-- link to your app.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
