@@ -1,14 +1,8 @@
-// - [ ] Data computing
-//   - [x] Total word count
-//   - [ ] Unique word count
-//   - [ ] Average word length
-// - [ ] Grabbing data from <textarea>
-
 //GET WORD COUNT OF INPUT and RETURN INPUT LENGTH
 // split up the length of the string and get the length of the split (each word)
 function wordCount(input) {
-  var words = input.split(" ").length;
-  $('.js-word-count').text(words);
+  var wordCount = input.split(" ").length;
+  $('.js-word-count').text(wordCount);
 }
 
 //GET UNIQUE WORD LENGTH OF INPUT and RETURN INPUT LENGTH
@@ -35,8 +29,18 @@ function averageLength (input){
 }
 
 //ADD VALUES TO DATA LIST
-function enterpriseGradeReport (input) {
-  return input;
+//CLEAN UP CODE
+//once you get everything working, move all the universal pieces into this area
+//this includes pushing the text, and variables that can be used elsewhere.
+function createReport (input) {
+  // var totalWordCount = wordCount(input);
+  // var averageWordLength = averageLength(input);
+  // var uniqueWordLength = uniqueCount(input);
+  // var report = $('.text-report');
+  //
+  // report.find('.js-word-count').text(averageWordLength);
+  // report.find('.js-average-word-length').text(averageWordLength);
+  // report.find('.js-average-word-length').text(averageWordLength);
 }
 
 //GET ALL INFORMATION WHEN USER HITS "SUBMIT" and PASS TO OTHER FUNCTIONS
@@ -45,6 +49,7 @@ function formSubmit() {
     e.preventDefault();
     $('.hidden').show();
     var input = $('textarea').val();
+    // createReport (input);
     wordCount(input);
     averageLength(input);
     uniqueCount(input);
