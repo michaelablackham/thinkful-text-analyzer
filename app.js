@@ -4,45 +4,37 @@
 //   - [ ] Average word length
 // - [ ] Grabbing data from <textarea>
 
-//GET TEXT FROM TEXTAREA
-// var input = "michaela eleanor blackham and ryan chase ledereman moved to denver colorado from weymouth and natick massachusetts"
-
 //GET WORD COUNT OF INPUT and RETURN INPUT LENGTH
+// split up the length of the string and get the length of the split (each word)
 function wordCount(input) {
   var words = input.split(" ").length;
   $('.js-word-count').text(words);
 }
 
 //GET UNIQUE WORD LENGTH OF INPUT and RETURN INPUT LENGTH
+// need to use a loop to go through each word and add it to an array
+// if word === another word already in the array, count up that word
 function uniqueCount(input) {
   var wordList = [];
   var wordCount = input.split(" ").length;
   for ( var i = 0; i <= wordCount; i++) {
-    input.str("");
-    wordList.push(input);
+    console.log( i );
   }
-  console.log(wordList);
+  console.log(wordList)
 }
 
 //GET AVERAGE WORD LENGTH OF INPUT and RETURN INPUT LENGTH
+// get the entire length of the string and divide it by the amount of words
 function averageLength (input){
-  var characters = input.split("");
-  $('.js-average-word-length').text(characters.length + ' characters')
+  var wordCount = input.split(" ").length;
+  var characters = input.split("").length;
+  var averageWordLength = characters/wordCount;
+  $('.js-average-word-length').text(averageWordLength + ' characters')
 }
 
 //ADD VALUES TO DATA LIST
 function enterpriseGradeReport (input) {
   return input;
-  return {
-    // total_count: totalWords,
-    // unique_count: {
-    //   'Help': 2,
-    //   'I': 1,
-    //   'need': 1,
-    //   "somebody's": 1
-    // }
-    // average: /2
-  };
 }
 
 //GET ALL INFORMATION WHEN USER HITS "SUBMIT" and PASS TO OTHER FUNCTIONS
@@ -61,5 +53,3 @@ function formSubmit() {
 $(function() {
   formSubmit();
 });
-// var report = enterpriseGradeReport(input)
-// console.log('report:', report);
