@@ -15,7 +15,7 @@
 // if word === another word already in the array, count up that word
 function uniqueCount(token) {
   var wordList = [];
-  var wordCount = token.split(" ").length;
+  var wordCount = token.length;
   for ( var i = 0; i < wordCount; i++) {
     if (wordList.indexOf(token[i]) === -1) {
       wordList.push(token[i]);
@@ -30,9 +30,9 @@ function uniqueCount(token) {
 //////////////////////////////////////////////////////////////////
 // get the entire length of the string and divide it by the amount of words
 function averageLength (token){
-  var wordCount = token.split(" ").length;
-  var characters = token.split("").length;
-  var averageWordLength = characters/wordCount;
+  var wordCount = token.length;
+  var characters = token.join("").length;
+  return averageWordLength = characters/wordCount;
   // $('.js-average-word-length').text(averageWordLength + ' characters')
 }
 
@@ -41,7 +41,8 @@ function averageLength (token){
 //////////////////////////////////////////////////////////////////characters
 //change all text to lowercase and get rid of ranom spaces and
 function tokenizeText (text) {
-  return text.toLowerCase().match(/\b[^\s]+\b/).sort();
+  return text.toLowerCase().match(/\b[^\s]+\b/g).sort();
+  // return text.toLowerCase().match(/\b[^\s]+\b/g).sort();
 }
 
 function removeReturns (text) {
